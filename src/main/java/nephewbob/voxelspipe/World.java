@@ -1,5 +1,6 @@
 package nephewbob.voxelspipe;
 
+import java.io.IOException;
 import java.util.LinkedList;
 
 /**
@@ -19,11 +20,54 @@ class World {
         this.size = size;
     }    
 
-    void draw(Cube cube, Translation translation, Rotation rotation) {
+    private int[] convertCordinatesToIndex(double xPrime, double yPrime, double zPrime) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
-    void display() {
+    public boolean[][][] draw(
+            Cube cube, Translation translation, Rotation rotation) {
+        voxels = new boolean[size][size][size];
+        for (int i = 0; i < size; i++) {
+            for (int j = 0; j < size; j++) {
+                for (int k = 0; k < size; k++) {
+                    if (cube.getSize() >= 1
+                            && i < cube.getSize()
+                            && j < cube.getSize()
+                            && k < cube.getSize()) {
+                        // Usar primero la rotación y después la traslación por si se sale el cubo.
+                        Point3D cordinates = rotation.convertIndexesToCordinates(i, j, k);
+                        rotation.xAxis(cordinates.x, cordinates.y, cordinates.z);
+                        rotation.yAxis(rotation.xPrime, rotation.yPrime, rotation.zPrime);
+                        rotation.zAxis(rotation.xPrime, rotation.yPrime, rotation.zPrime);
+                        int[] indexes = convertCordinatesToIndex(rotation.xPrime, rotation.yPrime, rotation.zPrime);
+                        int iPrime = indexes[0] + translation.x;
+                        int jPrime = indexes[1] + translation.y;
+                        int kPrime = indexes[2] + translation.z;
+                        voxels[iPrime][jPrime][kPrime] = true;
+                    }
+                }
+            }
+        }
+        return voxels;
+    }
+
+    public String display() throws IOException, InterruptedException {
+        boolean[][] raster = rasterize();
+        String myWorld = "";
+        for (int i = 0; i < raster[0].length; i++) {
+            for (int j = 0; j < raster.length; j++) {
+                boolean current = raster[j][i];
+                myWorld += current ? SOLID + "" : TRANSPARENT + "";
+            }
+            myWorld += '\n';
+        }
+        new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
+        System.out.println(myWorld);
+        return myWorld;
+    }
+
+    private boolean[][] rasterize() {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
+
 }

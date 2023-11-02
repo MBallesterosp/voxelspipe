@@ -19,4 +19,16 @@ class Rotation {
         this.theta = theta;
         this.psi = psi;
     }    
+
+    Point3D convertIndexesToCordinates(int i, int j, int k) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    void yAxis(double xPrime, double yPrime, double zPrime) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    void zAxis(double xPrime, double yPrime, double zPrime) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
 }

@@ -6,7 +6,13 @@ package nephewbob.voxelspipe;
  */
 public class Cube {
 
-    public Cube(int i) {
+    int size;
+
+    public Cube(int size){
+        this.size = size;
     }
     
+    public int getSize(){
+        return size;
+    }    
 }
