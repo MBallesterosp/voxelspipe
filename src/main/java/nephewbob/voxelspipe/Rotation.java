@@ -21,14 +21,18 @@ class Rotation {
     }    
 
     Point3D convertIndexesToCordinates(int i, int j, int k) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        throw new UnsupportedOperationException("Not supported yet.");
     }
 
     void yAxis(double xPrime, double yPrime, double zPrime) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        throw new UnsupportedOperationException("Not supported yet.");
     }
 
     void zAxis(double xPrime, double yPrime, double zPrime) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
+
+    void xAxis(double x, double y, double z) {
+        throw new UnsupportedOperationException("Not supported yet.");
     }
 }

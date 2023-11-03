@@ -2,6 +2,8 @@ package nephewbob.voxelspipe;
 
 import java.io.IOException;
 import java.util.LinkedList;
+import static nephewbob.voxelspipe.Block.SOLID;
+import static nephewbob.voxelspipe.Block.TRANSPARENT;
 
 /**
  *
@@ -21,7 +23,7 @@ class World {
     }    
 
     private int[] convertCordinatesToIndex(double xPrime, double yPrime, double zPrime) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        throw new UnsupportedOperationException("Not supported yet.");
     }
 
     public boolean[][][] draw(
@@ -67,7 +69,7 @@ class World {
     }
 
     private boolean[][] rasterize() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        throw new UnsupportedOperationException("Not supported yet.");
     }
 
 }
