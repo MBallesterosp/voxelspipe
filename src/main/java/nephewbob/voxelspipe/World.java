@@ -22,8 +22,21 @@ class World {
         this.size = size;
     }    
 
-    private int[] convertCordinatesToIndex(double xPrime, double yPrime, double zPrime) {
-        throw new UnsupportedOperationException("Not supported yet.");
+    public int[] convertCordinatesToIndex(double x, double y, double z) {
+        int[] indexes = new int[3];
+        indexes[0] = (int) Math.floor(x) - 1;
+        if (x < 0) {
+            indexes[0] = (int) Math.ceil(x) - 1;
+        }
+        indexes[1] = (int) Math.floor(y) - 1;
+        if(y < 0){
+            indexes[1] = (int) Math.ceil(y) - 1;
+        }
+        indexes[2] = (int) Math.floor(z) - 1;
+        if(z < 1){
+            indexes[2] = (int) Math.ceil(z) - 1;
+        }
+        return indexes;
     }
 
     public boolean[][][] draw(
@@ -36,7 +49,7 @@ class World {
                             && i < cube.getSize()
                             && j < cube.getSize()
                             && k < cube.getSize()) {
-                        // Usar primero la rotación y después la traslación por si se sale el cubo.
+                        // Use first the rotation and then the translation in case the cube get placed out of the frustum.
                         Point3D cordinates = rotation.convertIndexesToCordinates(i, j, k);
                         rotation.xAxis(cordinates.x, cordinates.y, cordinates.z);
                         rotation.yAxis(rotation.xPrime, rotation.yPrime, rotation.zPrime);
@@ -68,8 +81,17 @@ class World {
         return myWorld;
     }
 
-    private boolean[][] rasterize() {
-        throw new UnsupportedOperationException("Not supported yet.");
+    public boolean[][] rasterize() {
+        //Save the raster
+        boolean[][] raster = new boolean[size][size];
+        for (int i = 0; i < size; i++) {
+            for (int j = 0; j < size; j++) {
+                for (int k = 0; k < size; k++) {
+                    raster[i][j] = voxels[i][j][k] || raster[i][j];
+                }
+            }
+        }
+        return raster;
     }
 
 }
