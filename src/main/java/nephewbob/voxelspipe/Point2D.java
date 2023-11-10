@@ -6,8 +6,11 @@ package nephewbob.voxelspipe;
  */
 class Point2D {
 
-    Point2D(double yPrime, double zPrime) {
-        throw new UnsupportedOperationException("Not supported yet.");
+    double x;
+    double y;
+
+    public Point2D(double x, double y) {
+        this.x = x;
+        this.y = y;
     }
-    
 }
