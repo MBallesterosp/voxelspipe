@@ -4,7 +4,7 @@ import java.io.IOException;
 
 /**
  *
- * @author MBallesterosp
+ * @author Mario Alberto Ballesteros Plata <MBallesterosp at nephewbob>
  */
 public class Voxelspipe {
 
