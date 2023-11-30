@@ -1,6 +1,9 @@
 package nephewbob.voxelspipe;
 
 import java.io.IOException;
+import nephewbob.voxelspipe.test.TestDisplaySuite;
+import nephewbob.voxelspipe.test.TestDrawSuite;
+import nephewbob.voxelspipe.test.TestRasterizeSuite;
 
 /**
  *
@@ -9,6 +12,9 @@ import java.io.IOException;
 public class Voxelspipe {
 
     public static void main(String[] args) throws IOException, InterruptedException {
+        assert TestDrawSuite.getResult();
+        assert TestRasterizeSuite.getResult();
+        assert TestDisplaySuite.getResult();        
         World world = new World(40);
         Cube cube = new Cube(10);
         Translation translation = new Translation(20, 20, 20);

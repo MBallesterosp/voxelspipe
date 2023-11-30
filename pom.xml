@@ -11,4 +11,11 @@
         <maven.compiler.target>20</maven.compiler.target>
         <exec.mainClass>nephewbob.voxelspipe.Voxelspipe</exec.mainClass>
     </properties>
+    <dependencies>
+        <dependency>
+            <groupId>nephewbob.testframework</groupId>
+            <artifactId>testframework</artifactId>
+            <version>0.1</version>
+        </dependency>
+    </dependencies>
 </project>
