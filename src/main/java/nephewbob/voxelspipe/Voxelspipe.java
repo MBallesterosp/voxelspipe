@@ -12,9 +12,9 @@ import nephewbob.voxelspipe.test.TestRasterizeSuite;
 public class Voxelspipe {
 
     public static void main(String[] args) throws IOException, InterruptedException {
-        assert TestDrawSuite.getResult();
-        assert TestRasterizeSuite.getResult();
-        assert TestDisplaySuite.getResult();        
+        assert new TestDrawSuite().getResult();
+        assert new TestRasterizeSuite().getResult();
+        assert new TestDisplaySuite().getResult();
         World world = new World(40);
         Cube cube = new Cube(10);
         Translation translation = new Translation(20, 20, 20);

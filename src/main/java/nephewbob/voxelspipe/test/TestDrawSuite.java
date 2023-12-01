@@ -9,7 +9,7 @@ import nephewbob.testframework.TestSuite;
 public class TestDrawSuite extends TestSuite{
 
     @Override
-    boolean executeTest(int i) {
+    public boolean executeTest(int i) {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 

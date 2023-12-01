@@ -1,5 +1,7 @@
 package nephewbob.voxelspipe.test;
 
+import nephewbob.testframework.Expected;
+import nephewbob.testframework.Input;
 import nephewbob.testframework.TestSuite;
 
 /**
@@ -9,13 +11,28 @@ import nephewbob.testframework.TestSuite;
 public class TestRasterizeSuite extends TestSuite {
 
     @Override
-    boolean executeTest(int i) {
-        throw new UnsupportedOperationException("Not supported yet.");
+    public boolean executeTest(int testNumber) {
+        System.out.println(new Object() {
+        }.getClass().getEnclosingMethod().getName() + "(" + testNumber + ")");
+        Input input = dataProvider.getInput(testNumber);
+        Expected expected = dataProvider.getExpected(testNumber);
+        boolean boundary = dataProvider.getBoundary(testNumber);
+        TestDraw testDraw = new TestDraw(boundary, expected, (InputTestDraw) input);
+        return testDraw.getResult();
     }
 
     @Override
-    boolean getResult() {
-        throw new UnsupportedOperationException("Not supported yet.");
+    public boolean getResult() {
+        TestDraw testDraw;
+        int testNumber = 0;
+        boolean result = true;
+        for (Object[] datum : DataProviderDraw.getInstanceDraw()) {
+            testDraw = new TestDraw((Boolean) datum[0], (Expected) datum[1], (Input) datum[2]);
+            result = result && testDraw.getResult();
+            System.out.println("testnumber" + " " + testNumber);
+            testNumber++;
+        }
+        return result;
     }
     
 }
