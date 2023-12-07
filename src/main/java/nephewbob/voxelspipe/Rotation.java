@@ -5,7 +5,7 @@ package nephewbob.voxelspipe;
  * @author Mario Alberto Ballesteros Plata <MBallesterosp at nephewbob>
  * @author Raul Verduzco Cruz <ztr4w at nephewbob>
  */
-class Rotation {
+public class Rotation {
 
     int phi;
     int theta;

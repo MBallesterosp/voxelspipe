@@ -5,7 +5,7 @@ package nephewbob.voxelspipe;
  * @author Mario Alberto Ballesteros Plata <MBallesterosp at nephewbob>
  * @author Raul Verduzco Cruz <ztr4w at nephewbob>
  */
-class Translation {
+public class Translation {
     
     int x;
     int y;

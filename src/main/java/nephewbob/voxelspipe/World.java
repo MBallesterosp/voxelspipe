@@ -10,7 +10,7 @@ import static nephewbob.voxelspipe.Block.TRANSPARENT;
  * @author Mario Alberto Ballesteros Plata <MBallesterosp at nephewbob>
  * @author Raul Verduzco Cruz <ztr4w at nephewbob>
  */
-class World {
+public class World {
 
     boolean[][][] voxels;
     LinkedList<Cube> objects;
