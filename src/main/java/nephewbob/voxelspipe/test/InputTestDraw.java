@@ -12,21 +12,26 @@ import nephewbob.voxelspipe.World;
  * @author Mario Alberto Ballesteros Plata <MBallesterosp at nephewbob>
  */
 public class InputTestDraw implements Input {
+    
+    World world;
+    Cube cube;
+    Translation translation;
+    Rotation rotation;    
 
     public World getWorld() {
-        throw new UnsupportedOperationException("Not supported yet.");
+        return world;
     }
 
     public Cube getCube() {
-        throw new UnsupportedOperationException("Not supported yet.");
+        return cube;
     }
 
     public Translation getTranslation() {
-        throw new UnsupportedOperationException("Not supported yet.");
+        return translation;
     }
     
     public Rotation getRotation(){
-        throw new UnsupportedOperationException("Not supported yet.");
+        return rotation;
     }
 
 }

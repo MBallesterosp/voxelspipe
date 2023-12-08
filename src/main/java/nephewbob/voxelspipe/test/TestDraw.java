@@ -13,6 +13,9 @@ import nephewbob.testframework.Test;
  * @author Raul Verduzco Cruz <ztr4w at nephewbob>
  */
 class TestDraw extends Test {
+    
+    ExpectedTestDraw expected;
+    InputTestDraw input;
 
     public TestDraw(boolean boundary, Expected expected, Input input) {
         super(boundary, expected, input);
@@ -46,6 +49,10 @@ class TestDraw extends Test {
 
     @Override
     public boolean output() {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
+
+    private boolean equals(boolean[][][] output, Object value) {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
